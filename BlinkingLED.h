@@ -18,11 +18,16 @@ public:
      * @param led flip frequency. default: 1hz
      */
     BlinkingLED(PinName led, uint32_t freqency = 1);
-    
+
     /**
-     * @brief flips LED.
+     * @brief start blinking LED.
      */
-    void flip(void);
+    void start(void);
+
+    /**
+     * @brief stop blinking LED.
+     */
+    void stop(void);
 
 private:
     Ticker t;
@@ -36,6 +41,11 @@ private:
     } setting_s;
 
     setting_s setting;
+
+    /**
+     * @brief flips LED.
+     */
+    void flip(void);
 };
 
 #endif
